@@ -1,0 +1,30 @@
+import tkinter as tk
+
+# 建立主視窗
+root = tk.Tk()
+root.title("Tkinter Pack 版面配置範例")
+root.geometry("300x200")
+
+# === 建立上方區塊 ===
+top_frame = tk.Frame(root, bg="#ff6666", height=50)
+top_frame.pack(side="top", fill="x")  # 上方橫條
+
+top_label = tk.Label(top_frame, text="上方區塊 (Top)", bg="#ff6666", fg="white", font=("Microsoft JhengHei UI", 12))
+top_label.pack(pady=10)
+
+# === 建立中間區塊 ===
+middle_frame = tk.Frame(root, bg="#66ccff")
+middle_frame.pack(fill="both", expand=True)  # 會隨視窗大小伸縮
+
+middle_label = tk.Label(middle_frame, text="中間區塊 (Expand=True)", bg="#66ccff", font=("Microsoft JhengHei UI", 12))
+middle_label.pack(expand=True)
+
+# === 建立下方區塊 ===
+bottom_frame = tk.Frame(root, bg="#99cc66", height=40)
+bottom_frame.pack(side="bottom", fill="x")  # 下方橫條
+
+bottom_label = tk.Label(bottom_frame, text="下方區塊 (Bottom)", bg="#99cc66", font=("Microsoft JhengHei UI", 12))
+bottom_label.pack(pady=5)
+
+# 啟動主迴圈
+root.mainloop()
